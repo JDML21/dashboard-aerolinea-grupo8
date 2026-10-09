@@ -1,0 +1,57 @@
+id_ruta,ruta,origen,destino,ciudad_origen,region_origen,latitud_origen,longitud_origen,ciudad_destino,region_destino,latitud_destino,longitud_destino,tipo_ruta
+1,BAQ-BGA,BAQ,BGA,Barranquilla,Caribe,10.8896,-74.7808,Bucaramanga,Andina,7.1265,-73.1848,Interregional
+2,BAQ-BOG,BAQ,BOG,Barranquilla,Caribe,10.8896,-74.7808,Bogotá,Andina,4.7016,-74.1469,Interregional
+3,BAQ-CLO,BAQ,CLO,Barranquilla,Caribe,10.8896,-74.7808,Cali,Pacífico,3.5432,-76.3816,Interregional
+4,BAQ-CTG,BAQ,CTG,Barranquilla,Caribe,10.8896,-74.7808,Cartagena,Caribe,10.4424,-75.513,Intrarregional
+5,BAQ-MDE,BAQ,MDE,Barranquilla,Caribe,10.8896,-74.7808,Medellín,Andina,6.1645,-75.4231,Interregional
+6,BAQ-PEI,BAQ,PEI,Barranquilla,Caribe,10.8896,-74.7808,Pereira,Andina,4.8127,-75.7395,Interregional
+7,BAQ-SMR,BAQ,SMR,Barranquilla,Caribe,10.8896,-74.7808,Santa Marta,Caribe,11.1196,-74.2306,Intrarregional
+8,BGA-BAQ,BGA,BAQ,Bucaramanga,Andina,7.1265,-73.1848,Barranquilla,Caribe,10.8896,-74.7808,Interregional
+9,BGA-BOG,BGA,BOG,Bucaramanga,Andina,7.1265,-73.1848,Bogotá,Andina,4.7016,-74.1469,Intrarregional
+10,BGA-CLO,BGA,CLO,Bucaramanga,Andina,7.1265,-73.1848,Cali,Pacífico,3.5432,-76.3816,Interregional
+11,BGA-CTG,BGA,CTG,Bucaramanga,Andina,7.1265,-73.1848,Cartagena,Caribe,10.4424,-75.513,Interregional
+12,BGA-MDE,BGA,MDE,Bucaramanga,Andina,7.1265,-73.1848,Medellín,Andina,6.1645,-75.4231,Intrarregional
+13,BGA-PEI,BGA,PEI,Bucaramanga,Andina,7.1265,-73.1848,Pereira,Andina,4.8127,-75.7395,Intrarregional
+14,BGA-SMR,BGA,SMR,Bucaramanga,Andina,7.1265,-73.1848,Santa Marta,Caribe,11.1196,-74.2306,Interregional
+15,BOG-BAQ,BOG,BAQ,Bogotá,Andina,4.7016,-74.1469,Barranquilla,Caribe,10.8896,-74.7808,Interregional
+16,BOG-BGA,BOG,BGA,Bogotá,Andina,4.7016,-74.1469,Bucaramanga,Andina,7.1265,-73.1848,Intrarregional
+17,BOG-CLO,BOG,CLO,Bogotá,Andina,4.7016,-74.1469,Cali,Pacífico,3.5432,-76.3816,Interregional
+18,BOG-CTG,BOG,CTG,Bogotá,Andina,4.7016,-74.1469,Cartagena,Caribe,10.4424,-75.513,Interregional
+19,BOG-MDE,BOG,MDE,Bogotá,Andina,4.7016,-74.1469,Medellín,Andina,6.1645,-75.4231,Intrarregional
+20,BOG-PEI,BOG,PEI,Bogotá,Andina,4.7016,-74.1469,Pereira,Andina,4.8127,-75.7395,Intrarregional
+21,BOG-SMR,BOG,SMR,Bogotá,Andina,4.7016,-74.1469,Santa Marta,Caribe,11.1196,-74.2306,Interregional
+22,CLO-BAQ,CLO,BAQ,Cali,Pacífico,3.5432,-76.3816,Barranquilla,Caribe,10.8896,-74.7808,Interregional
+23,CLO-BGA,CLO,BGA,Cali,Pacífico,3.5432,-76.3816,Bucaramanga,Andina,7.1265,-73.1848,Interregional
+24,CLO-BOG,CLO,BOG,Cali,Pacífico,3.5432,-76.3816,Bogotá,Andina,4.7016,-74.1469,Interregional
+25,CLO-CTG,CLO,CTG,Cali,Pacífico,3.5432,-76.3816,Cartagena,Caribe,10.4424,-75.513,Interregional
+26,CLO-MDE,CLO,MDE,Cali,Pacífico,3.5432,-76.3816,Medellín,Andina,6.1645,-75.4231,Interregional
+27,CLO-PEI,CLO,PEI,Cali,Pacífico,3.5432,-76.3816,Pereira,Andina,4.8127,-75.7395,Interregional
+28,CLO-SMR,CLO,SMR,Cali,Pacífico,3.5432,-76.3816,Santa Marta,Caribe,11.1196,-74.2306,Interregional
+29,CTG-BAQ,CTG,BAQ,Cartagena,Caribe,10.4424,-75.513,Barranquilla,Caribe,10.8896,-74.7808,Intrarregional
+30,CTG-BGA,CTG,BGA,Cartagena,Caribe,10.4424,-75.513,Bucaramanga,Andina,7.1265,-73.1848,Interregional
+31,CTG-BOG,CTG,BOG,Cartagena,Caribe,10.4424,-75.513,Bogotá,Andina,4.7016,-74.1469,Interregional
+32,CTG-CLO,CTG,CLO,Cartagena,Caribe,10.4424,-75.513,Cali,Pacífico,3.5432,-76.3816,Interregional
+33,CTG-MDE,CTG,MDE,Cartagena,Caribe,10.4424,-75.513,Medellín,Andina,6.1645,-75.4231,Interregional
+34,CTG-PEI,CTG,PEI,Cartagena,Caribe,10.4424,-75.513,Pereira,Andina,4.8127,-75.7395,Interregional
+35,CTG-SMR,CTG,SMR,Cartagena,Caribe,10.4424,-75.513,Santa Marta,Caribe,11.1196,-74.2306,Intrarregional
+36,MDE-BAQ,MDE,BAQ,Medellín,Andina,6.1645,-75.4231,Barranquilla,Caribe,10.8896,-74.7808,Interregional
+37,MDE-BGA,MDE,BGA,Medellín,Andina,6.1645,-75.4231,Bucaramanga,Andina,7.1265,-73.1848,Intrarregional
+38,MDE-BOG,MDE,BOG,Medellín,Andina,6.1645,-75.4231,Bogotá,Andina,4.7016,-74.1469,Intrarregional
+39,MDE-CLO,MDE,CLO,Medellín,Andina,6.1645,-75.4231,Cali,Pacífico,3.5432,-76.3816,Interregional
+40,MDE-CTG,MDE,CTG,Medellín,Andina,6.1645,-75.4231,Cartagena,Caribe,10.4424,-75.513,Interregional
+41,MDE-PEI,MDE,PEI,Medellín,Andina,6.1645,-75.4231,Pereira,Andina,4.8127,-75.7395,Intrarregional
+42,MDE-SMR,MDE,SMR,Medellín,Andina,6.1645,-75.4231,Santa Marta,Caribe,11.1196,-74.2306,Interregional
+43,PEI-BAQ,PEI,BAQ,Pereira,Andina,4.8127,-75.7395,Barranquilla,Caribe,10.8896,-74.7808,Interregional
+44,PEI-BGA,PEI,BGA,Pereira,Andina,4.8127,-75.7395,Bucaramanga,Andina,7.1265,-73.1848,Intrarregional
+45,PEI-BOG,PEI,BOG,Pereira,Andina,4.8127,-75.7395,Bogotá,Andina,4.7016,-74.1469,Intrarregional
+46,PEI-CLO,PEI,CLO,Pereira,Andina,4.8127,-75.7395,Cali,Pacífico,3.5432,-76.3816,Interregional
+47,PEI-CTG,PEI,CTG,Pereira,Andina,4.8127,-75.7395,Cartagena,Caribe,10.4424,-75.513,Interregional
+48,PEI-MDE,PEI,MDE,Pereira,Andina,4.8127,-75.7395,Medellín,Andina,6.1645,-75.4231,Intrarregional
+49,PEI-SMR,PEI,SMR,Pereira,Andina,4.8127,-75.7395,Santa Marta,Caribe,11.1196,-74.2306,Interregional
+50,SMR-BAQ,SMR,BAQ,Santa Marta,Caribe,11.1196,-74.2306,Barranquilla,Caribe,10.8896,-74.7808,Intrarregional
+51,SMR-BGA,SMR,BGA,Santa Marta,Caribe,11.1196,-74.2306,Bucaramanga,Andina,7.1265,-73.1848,Interregional
+52,SMR-BOG,SMR,BOG,Santa Marta,Caribe,11.1196,-74.2306,Bogotá,Andina,4.7016,-74.1469,Interregional
+53,SMR-CLO,SMR,CLO,Santa Marta,Caribe,11.1196,-74.2306,Cali,Pacífico,3.5432,-76.3816,Interregional
+54,SMR-CTG,SMR,CTG,Santa Marta,Caribe,11.1196,-74.2306,Cartagena,Caribe,10.4424,-75.513,Intrarregional
+55,SMR-MDE,SMR,MDE,Santa Marta,Caribe,11.1196,-74.2306,Medellín,Andina,6.1645,-75.4231,Interregional
+56,SMR-PEI,SMR,PEI,Santa Marta,Caribe,11.1196,-74.2306,Pereira,Andina,4.8127,-75.7395,Interregional

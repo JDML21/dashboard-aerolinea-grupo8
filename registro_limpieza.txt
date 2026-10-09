@@ -1,0 +1,82 @@
+=== 1. PERFILAMIENTO INICIAL ===
+Registros: 55,000 | Columnas: 16
+Unidad de observación: un segmento de vuelo vendido (id_segmento_vuelo único).
+IDs duplicados: 0
+Filas duplicadas (sin ID): 0
+Vuelos con origen = destino: 0
+Valores faltantes por columna:
+  - motivo_irregularidad: 48,550 (88.3%)
+  - calificacion_1a5: 989 (1.8%)
+
+=== 2. TIPADO ===
+fecha_vuelo -> datetime. Rango: 2024-01-01 a 2026-09-30
+Sí/No -> booleano: vuelo_cancelado, equipaje_facturado, conexion, cliente_frecuente
+
+=== 3. VALORES FALTANTES ===
+motivo_irregularidad: 48,550 vacíos -> 'Sin irregularidad'.
+  Justificación: el motivo solo se registra en vuelos cancelados o con retraso > 60 min;
+  el vacío indica ausencia de irregularidad, no un dato perdido.
+calificacion_1a5: 989 vacíos se conservan como nulos (no se imputan).
+  Justificación: imputar inventaría opiniones de pasajeros; los promedios de
+  satisfacción se calculan solo con calificaciones registradas.
+
+=== 4. INCONSISTENCIAS ===
+Vuelos cancelados con retraso registrado: 738 de 1,045 cancelados.
+  Decisión: retraso -> nulo en todos los cancelados (un vuelo que no operó no tiene
+  retraso de salida). Así no distorsionan puntualidad ni retraso promedio.
+Valores fuera de rango en ocupacion_pct (0-100): 0
+Valores fuera de rango en calificacion_1a5 (1-5): 0
+Valores fuera de rango en precio_tiquete_cop (> 0): 0
+Valores fuera de rango en retraso_salida_min (>= 0): 0
+
+=== 5. ATÍPICOS DE PRECIO ===
+Atípicos por IQR global (precio > 648,518): 3,770
+Distribución de atípicos por tarifa:
+  - Ejecutiva: 2,940
+  - Flexible: 773
+  - Básica: 57
+Precio promedio por tarifa:
+  - Básica: $244,796
+  - Ejecutiva: $871,382
+  - Flexible: $382,984
+  Decisión: se conservan. Son precios válidos explicados por la tarifa Ejecutiva/Flexible.
+
+=== 6. VARIABLES DERIVADAS ===
+anio, mes, trimestre, anio_mes, dia_semana: desagregación temporal.
+ruta: origen-destino.
+vuelo_puntual: retraso <= 15 min (nulo si cancelado).
+rango_retraso: Sin retraso / 1-15 / 16-45 / 46-90 / Más de 90 min / Cancelado.
+vuelo_irregular: tiene motivo de irregularidad.
+pasajero_satisfecho: calificación >= 4 (nulo si no calificó).
+ingreso_efectivo_cop: precio si el vuelo operó, 0 si fue cancelado.
+
+=== 7. KPIs DE REFERENCIA (dataset completo) ===
+% de puntualidad:          46.9%
+Tasa de cancelación:       1.9%
+% vuelos con irregularidad:11.7%
+Calificación promedio:     4.12
+Ingresos totales:          $17,926,014,312 COP
+Ocupación promedio:        81.7 %
+
+=== 8. RESULTADO ===
+Registros finales: 55,000 (no se eliminó ningún registro)
+Columnas finales: 27
+Archivo generado: 08_aerolinea_regional_limpio.csv
+
+=== 9. MODELO DE DATOS (ESQUEMA ESTRELLA) ===
+fact_vuelos: 55,000 filas x 20 columnas
+dim_calendario: 1,004 filas x 8 columnas
+dim_ruta: 56 filas x 13 columnas
+dim_tarifa: 3 filas x 2 columnas
+dim_canal: 4 filas x 2 columnas
+dim_franja: 4 filas x 2 columnas
+dim_motivo: 5 filas x 2 columnas
+Relaciones (1 a muchos, dimensión -> hechos):
+  dim_calendario.id_fecha -> fact_vuelos.id_fecha
+  dim_ruta.id_ruta        -> fact_vuelos.id_ruta
+  dim_tarifa.id_tarifa    -> fact_vuelos.id_tarifa
+  dim_canal.id_canal      -> fact_vuelos.id_canal
+  dim_franja.id_franja    -> fact_vuelos.id_franja
+  dim_motivo.id_motivo    -> fact_vuelos.id_motivo
+Granularidad de la tabla de hechos: un segmento de vuelo vendido.
+Tablas guardadas en: modelo/

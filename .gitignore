@@ -1,0 +1,5 @@
+.venv/
+__pycache__/
+.DS_Store
+.claude/
+proyecto_final_dashboard_bi_2026_2.pdf
