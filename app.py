@@ -128,7 +128,7 @@ def estilo(fig, alto=360, leyenda=True):
 def grafico(fig, unidad, n, extra=""):
     """Dibuja el gráfico y debajo su unidad, periodo y número de observaciones."""
     config = {"displayModeBar": False, "locale": "es"}
-    st.plotly_chart(fig, theme=None, config=config, **ANCHO)
+    st.plotly_chart(fig, use_container_width=True, theme=None, config=config)
     pie = f"{unidad} · n = {fmt_num(n)} · {PERIODO}"
     st.caption(f"{pie}. {extra}" if extra else pie)
 
