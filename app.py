@@ -12,7 +12,6 @@ Principios de diseño de esta versión
 - Las metas son referencias PROPUESTAS por el grupo, no estándares universales.
 """
 
-from datetime import datetime
 from pathlib import Path
 
 import numpy as np
@@ -492,7 +491,8 @@ prioritarias = tabla[tabla["prioridad"].str.startswith("Intervenir")].sort_value
 # ---------------------------------------------------------------------------
 # Encabezado
 # ---------------------------------------------------------------------------
-fecha_datos = datetime.fromtimestamp((CARPETA_MODELO / "fact_vuelos.csv").stat().st_mtime)
+# Fecha del último vuelo registrado (no la del archivo: en el servidor esa fecha es la del despliegue)
+fecha_datos = datos["fecha"].max()
 st.markdown(
     f"""
     <div class="hero">
@@ -502,7 +502,7 @@ st.markdown(
             <span class="chip"><b>Audiencia</b>Gerencia de Operaciones y Experiencia del Pasajero</span>
             <span class="chip"><b>Periodo</b>{PERIODO}</span>
             <span class="chip"><b>Vuelos</b>{fmt_num(len(df))} de {fmt_num(len(datos))}</span>
-            <span class="chip"><b>Datos actualizados</b>{fecha_datos:%d/%m/%Y}</span>
+            <span class="chip"><b>Datos hasta</b>{fecha_datos:%d/%m/%Y}</span>
             <span class="chip"><b>Fuente</b>sintéticos y anonimizados</span>
         </div>
     </div>
@@ -1239,7 +1239,7 @@ with tab_metodo:
             ],
             columns=["Variable", "Hallazgo", "Regla aplicada"],
         ).set_index("Variable"))
-    st.caption(f"Última actualización de los datos del modelo: {fecha_datos:%d/%m/%Y %H:%M}.")
+    st.caption(f"Los datos cubren vuelos hasta el {fecha_datos:%d/%m/%Y}.")
 
     with st.expander("Origen de los datos", expanded=True):
         st.markdown(
