@@ -21,6 +21,10 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
+# Compatibilidad entre versiones de Streamlit: "stretch" solo existe desde la 1.50
+_VERSION = tuple(int(x) for x in st.__version__.split(".")[:2] if x.isdigit())
+ANCHO = {"width": "stretch"} if _VERSION >= (1, 50) else {"use_container_width": True}
+
 st.set_page_config(page_title="Aerolínea · Operación y Experiencia", page_icon=":material/flight:", layout="wide")
 
 CARPETA = Path(__file__).parent
@@ -124,10 +128,7 @@ def estilo(fig, alto=360, leyenda=True):
 def grafico(fig, unidad, n, extra=""):
     """Dibuja el gráfico y debajo su unidad, periodo y número de observaciones."""
     config = {"displayModeBar": False, "locale": "es"}
-    try:
-        st.plotly_chart(fig, width="stretch", theme=None, config=config)
-    except TypeError:  # versiones antiguas de Streamlit
-        st.plotly_chart(fig, use_container_width=True, theme=None, config=config)
+    st.plotly_chart(fig, theme=None, config=config, **ANCHO)
     pie = f"{unidad} · n = {fmt_num(n)} · {PERIODO}"
     st.caption(f"{pie}. {extra}" if extra else pie)
 
@@ -1098,7 +1099,7 @@ with tab_comercial:
         ["ruta", "prioridad", "ingresos_m", "expuesto_m", "punt", "canc", "calificacion", "ocupacion", "vuelos"]
     ]
     st.dataframe(
-        vista, hide_index=True, width="stretch", height=380,
+        vista, hide_index=True, height=380, **ANCHO,
         column_config={
             "ruta": "Ruta", "prioridad": "Prioridad",
             "ingresos_m": st.column_config.NumberColumn("Ingresos (M COP)", format="%.0f"),
@@ -1308,5 +1309,5 @@ with tab_metodo:
     with st.expander("Datos filtrados"):
         st.dataframe(
             df.drop(columns=[c for c in df.columns if c.startswith("id_") and c != "id_segmento_vuelo"]),
-            width="stretch", height=350,
+            height=350, **ANCHO,
         )
